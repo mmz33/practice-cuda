@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "book.h"
+#include "common/book.h"
 
 // global will let the compiler know that this should run on device
 // instead of host
