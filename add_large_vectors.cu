@@ -50,9 +50,16 @@ int main() {
   // copy result back to c
   HANDLE_ERROR(cudaMemcpy(c, dev_c, N * sizeof(int), cudaMemcpyDeviceToHost));
 
-  for (int i = 0; i < N; ++i) {
-    printf("%d + %d = %d\n", a[i], b[i], c[i]);
+  bool success = true;
+  for (int i = 0; i < N && success; ++i) {
+    if (a[i] + b[i] != c[i])
+      success = false;
   }
+
+  if (!success)
+    printf("something went wrong!\n");
+  else
+    printf("worked!\n");
 
   cudaFree(dev_a);
   cudaFree(dev_b);
