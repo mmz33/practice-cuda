@@ -37,7 +37,8 @@ int main() {
   HANDLE_ERROR(cudaMemcpy(dev_a, a, N * sizeof(int), cudaMemcpyHostToDevice));
   HANDLE_ERROR(cudaMemcpy(dev_b, b, N * sizeof(int), cudaMemcpyHostToDevice));
 
-  // spawn N blocks (each block will run in parallel)
+  // spawn N blocks each having 1 thread (each block will run in parallel)
+  // number of threads = N blocks * 1 thread/block = N threads
   add<<<N, 1>>>(dev_a, dev_b, dev_c);
 
   // copy result back to c
