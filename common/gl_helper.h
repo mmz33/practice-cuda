@@ -41,7 +41,8 @@
 #else
 
 /* On Linux, include the system's copy of glut.h, glext.h, and glx.h */
-#include <GL/glut.h>
+//#include <GL/glut.h>
+#include "GL/glut.h"
 #include <GL/glext.h>
 #include <GL/glx.h>
 
