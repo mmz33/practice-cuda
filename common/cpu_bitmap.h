@@ -55,6 +55,23 @@ struct CPUBitmap {
         glutDisplayFunc(Draw);
         glutMainLoop();
     }
+        
+    void output_ppm(FILE *stream, int num_channels) {
+      fprintf(stream, "P3\n");
+      fprintf(stream, "%d %d\n", y, x);
+      fprintf(stream, "255\n");
+      for (int i = 0; i < y; ++i) {
+        for (int j = 0; j < x; ++j) {
+          // only consider RGB, assume first 3
+          for (int k = 0; k < 3; ++k) {
+            if (k > 0)
+              fprintf(stream, " ");
+            fprintf(stream, "%d", pixels[j * num_channels + i * x * num_channels + k]);        
+          }
+          fprintf(stream, "\n");
+        }
+      }
+    }
 
      // static method used for glut callbacks
     static CPUBitmap** get_bitmap_ptr( void ) {
