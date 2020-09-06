@@ -1,7 +1,2 @@
-/*
-**
-!*.cu
-!*.h
-!.gitignore
-!common
-!images
+execs
+.history.*
