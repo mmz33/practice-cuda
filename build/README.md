@@ -8,7 +8,7 @@
 
 Note: You might need to set `CMAKE_INSTALL_PREFIX` to the target directory you want.
 
-### OS
+These steps were followed to build freeglut on the following OS:
 ```
 Distributor ID: Ubuntu
 Description:  Ubuntu 16.04.7 LTS
