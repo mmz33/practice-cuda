@@ -1,7 +1,7 @@
 ## Building Steps:
 
 1. Download freeglut latest version from [here](http://freeglut.sourceforge.net/)
-2. Unzip the folder
+2. Unzip the folder and cd to it
 3. Run `cmake .`
 4. Run `make`
 5. Run `make install`
