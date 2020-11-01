@@ -37,7 +37,7 @@
 // Elapsed Time: 468.6 ms
 
 
-#define SIZE 1000 * 1024 * 1024 // 100 MB
+#define SIZE 1000 * 1024 * 1024 // 1 GB
 
 __global__ void compute_hist(unsigned char *dev_buffer, int size, unsigned int *dev_hist) {
   int idx = threadIdx.x + blockIdx.x * blockDim.x;
